@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+
+.title {
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+}
+
+form {
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	display: block;
+}
+
+/* 房间信息标题（短文、长文） */
+.small {
+	display: inline-block;
+	width: 9%;
+	text-align: center;
+}
+
+.medium {
+	display: inline-block;
+	width: 19%;
+	text-align: center;
+}

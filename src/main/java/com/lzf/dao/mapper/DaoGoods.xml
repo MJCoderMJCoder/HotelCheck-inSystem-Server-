@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoGoods">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="select" resultType="com.lzf.entity.Goods">
+		select * from
+		goods
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert
+		into goods (name, price) values (#{name}, #{price})
+	</insert>
+	<update id="update">
+		update goods set price=#{price} where id=#{id}
+	</update>
+	<delete id="delete">
+		delete from goods where id = #{id}
+	</delete>
+</mapper>

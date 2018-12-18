@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+/* 标题 */
+.title {
+	width: 100%;
+	padding-left: 10px;
+}
+
+.small {
+	display: inline-block;
+	width: 19%;
+	text-align: center;
+}
+
+.medium {
+	display: inline-block;
+	width: 38%;
+	text-align: center;
+}
+/* 内容 */
+.content {
+	width: 100%;
+	padding: 10px;
+}
+/* 底部总计 */
+.bottom {
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+
+form {
+	text-align: center;
+	padding: 10px;
+}
+/* 顶部表单 */
+form div {
+	display: inline-block;
+	width: 18%;
+	text-align: center;
+}
+/*顶部添加房间 */
+#add {
+	width: 50%;
+}
+/* 标题 */
+.title {
+	width: 100%;
+	padding-left: 10px;
+}
+
+.small {
+	display: inline-block;
+	width: 16%;
+	text-align: center;
+}
+/* 内容 */
+.content {
+	width: 100%;
+	padding: 10px;
+}
+
+#password {
+	background-color: #f1f1f1;
+	border-width: 0;
+	width: 100%;
+	text-align: center;
+}

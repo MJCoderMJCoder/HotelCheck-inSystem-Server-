@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+
+/* 右边的表单 */
+.right {
+	text-align: center;
+	width: 30%;
+	float: right;
+}
+
+.right div {
+	padding: 10px;
+}
+
+/* 左边的顶部标题 */
+.left {
+	text-align: center;
+	width: 70%;
+	float: left;
+}
+
+.small {
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+}
+
+.content {
+	width: 100%;
+	padding: 10px;
+}

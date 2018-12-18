@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+
+.top {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+/* 顶部标题（短文、长文） */
+.small {
+	display: inline-block;
+	width: 6%;
+	text-align: center;
+}
+
+.medium {
+	display: inline-block;
+	width: 13%;
+	text-align: center;
+}
+/* 底部 */
+.bottom {
+	width: 100%;
+	text-align: center;
+	padding: 30px;
+}
+/* 底部表单 */
+#addForm form div {
+	display: inline-block;
+	width: 18%;
+}
+/* 底部表单的input */
+.value {
+	width: 60%;
+	display: inline-block;
+}
+/* 底部表单的span标签 */
+#addForm form div span {
+	width: 30%;
+	display: inline-block;
+}
+/* 底部添加房间 */
+#add {
+	width: 50%;
+}
+/* 中简单内容 ：房间信息*/
+.content {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+#status {
+	width: 90%;
+	display: inline-block;
+}

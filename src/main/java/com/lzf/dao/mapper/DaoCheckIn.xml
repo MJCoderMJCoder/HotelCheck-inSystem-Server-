@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoCheckIn">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="select" resultType="com.lzf.entity.Room">
+		select id, name, price,
+		few_human
+		as fewHuman, status, user as userId,
+		checkin_time as
+		checkinTime,
+		type,
+		checkout_time as checkoutTime
+		from room
+		where user = (select
+		id from user
+		where name = #{name} and
+		identity
+		=#{identity})
+	</select>
+
+	<update id="update">
+		update room set status=1, user=(select
+		id from user
+		where name = #{name} and
+		identity =#{identity}) where
+		id=#{id}
+	</update>
+</mapper>

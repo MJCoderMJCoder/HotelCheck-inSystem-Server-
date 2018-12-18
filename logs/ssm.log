@@ -1,0 +1,17 @@
+[INFO] [2018-04-20 21:10:57][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 08:34:53][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 08:35:33][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 08:37:08][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 08:37:23][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 08:41:26][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 08:42:37][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:15:09][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:15:55][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:16:53][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:18:15][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:18:42][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:24:33][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-04-21 09:30:15][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-06-21 19:55:30][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  [INFO] [2018-06-21 20:51:11][com.baidu.aip.client.BaseClient]get access_token success. current state: STATE_AIP_AUTH_OK
+  
