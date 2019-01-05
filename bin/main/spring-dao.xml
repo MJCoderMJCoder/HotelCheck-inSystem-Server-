@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 配置整合mybatis过程 -->
+
+	<!--引入propertise文件 -->
+	<!--传统方式引入 -->
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+	<!-- <property name="locations" value="classpath:db.properties"></property> -->
+	<!-- </bean> -->
+	<!--简化方式 -->
+	<!-- 1.配置数据库相关参数properties的属性：${url} -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- 2.数据库连接池 -->
+	<!-- 使用的alibba的数据库：<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
+		init-method="init" destroy-method="close"> -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 配置连接池属性 -->
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+		<!-- c3p0连接池的私有属性 -->
+		<property name="maxPoolSize" value="50" />
+		<property name="minPoolSize" value="10" />
+		<!-- 关闭连接后不自动commit -->
+		<property name="autoCommitOnClose" value="false" />
+		<!-- 获取连接超时时间 -->
+		<property name="checkoutTimeout" value="50000" />
+		<!-- 当获取连接失败重试次数 -->
+		<property name="acquireRetryAttempts" value="2" />
+	</bean>
+
+	<!-- 3.配置SqlSessionFactory对象。spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 注入数据库连接池 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描sql配置文件:mapper需要的xml文件 -->
+		<property name="mapperLocations" value="classpath:com/lzf/dao/mapper/*.xml" />
+		<!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<!-- 扫描entity包 使用别名 -->
+		<!-- <property name="typeAliasesPackage" value="com.lzf.entity" /> -->
+	</bean>
+
+	<!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中。自动扫描mybatis映射文件和接口的包 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 注入sqlSessionFactory -->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		<!-- 给出需要扫描Dao接口包 -->
+		<property name="basePackage" value="com.lzf.dao" />
+	</bean>
+</beans>
