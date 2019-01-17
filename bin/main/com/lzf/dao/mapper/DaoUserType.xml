@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoUserType">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="selectUser" resultType="com.lzf.entity.UserType">
+		select * from user_type where
+		type = 1
+	</select>
+	<select id="selectAdmin" resultType="com.lzf.entity.UserType">
+		select * from user_type
+		where type = -1
+	</select>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert
+		into user_type (type, memo) values (#{type}, #{memo})
+	</insert>
+</mapper>

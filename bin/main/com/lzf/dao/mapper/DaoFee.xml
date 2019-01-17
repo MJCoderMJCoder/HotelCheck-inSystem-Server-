@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoFee">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="select" resultType="com.lzf.entity.Fee">
+		select * from
+		fee
+	</select>
+	<select id="selectSum" resultType="float">
+		select sum(fee) from fee
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert
+		into fee (fee, memo)values
+		(#{fee},#{memo})
+	</insert>
+</mapper>

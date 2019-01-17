@@ -26,7 +26,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
       
     //当前发布的servlet API版本 providedCompile
-    providedCompile 'javax.servlet:javax.servlet-api:+'
+    compile 'javax.servlet:javax.servlet-api:+'
     compile 'javax:javaee-api:+'
     //Servlet web 
     compile 'taglibs:standard:+'

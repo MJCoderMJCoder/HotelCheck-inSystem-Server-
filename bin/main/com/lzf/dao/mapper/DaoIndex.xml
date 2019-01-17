@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoIndex">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="login" resultType="com.lzf.entity.User">
+		select user.id, user.name,
+		user.identity, user.password,
+		user_type.id as type, user_type.memo from
+		user
+		join user_type on user.type=user_type.id where identity
+		=
+		#{identity}
+		and password = #{password} and user_type.type =
+		#{type};
+	</select>
+	<select id="select" resultType="com.lzf.entity.User">
+		select user.id, user.name,
+		user.identity, user.password,
+		user_type.id as type,
+		user_type.memo from
+		user
+		join user_type on user.type=user_type.id where
+		user_type.type =
+		#{type}
+	</select>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert
+		into user (name, identity, type, password) values
+		(#{name},#{identity},#{type},#{password})
+	</insert>
+	<update id="update">
+		update user set type=#{type}, password=#{password}
+		where id=#{id}
+	</update>
+	<delete id="delete">
+		delete from user where id = #{id}
+	</delete>
+</mapper>

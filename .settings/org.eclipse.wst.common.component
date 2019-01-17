@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="HotelCheck-inSystem">
-        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+	<wb-module deploy-name="HotelCheck-inSystem">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="HotelCheck-inSystem"/>
-        <property name="java-output-path" value="/HotelCheck-inSystem/bin/default"/>
-    </wb-module>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+		<property name="context-root" value="HotelCheck-inSystem"/>
+	</wb-module>
 </project-modules>
