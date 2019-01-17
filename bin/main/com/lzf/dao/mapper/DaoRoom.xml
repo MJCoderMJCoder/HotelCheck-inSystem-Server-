@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.IDaoRoom">
+	<!-- useGeneratedKeys="true" keyProperty="id":插入成功1； -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert
+		into room (name, price,
+		few_human,
+		status, type)
+		values (#{name},
+		#{price}, #{fewHuman},
+		#{status},
+		#{type})
+	</insert>
+	<select id="select" resultType="com.lzf.entity.Room">
+		select id, name, price, few_human
+		as fewHuman, status, user as userId, checkin_time as checkinTime,
+		type, checkout_time as checkoutTime
+		from room
+	</select>
+	<select id="selectUser" resultType="com.lzf.entity.User">
+		select user.id, user.name,
+		user.identity, user.password,
+		user_type.id as type, user_type.memo from
+		user
+		join user_type on user.type=user_type.id where user.id =#{id}
+	</select>
+	<update id="update">
+		update room set price=#{price},
+		few_human=#{fewHuman}, status=#{status},
+		user=#{userId},
+		checkin_time=#{checkinTime}, type=#{type},
+		checkout_time=#{checkoutTime}
+		where id=#{id}
+	</update>
+	<delete id="delete">
+		delete from room where id = #{id}
+	</delete>
+	<select id="selectVacantRoom" resultType="com.lzf.entity.Room">
+		select id, name, price,
+		few_human
+		as fewHuman, status, user as userId, checkin_time as
+		checkinTime,
+		type, checkout_time as checkoutTime from
+		room where
+		status=0
+	</select>
+	<select id="selectUserRoom" resultType="com.lzf.entity.Room">
+		select id, name, price,
+		few_human
+		as fewHuman, status, user as userId, checkin_time as
+		checkinTime,
+		type, checkout_time as checkoutTime from
+		room where
+		user=#{userId} and status=1
+	</select>
+</mapper>
